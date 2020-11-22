@@ -1,6 +1,6 @@
 name 'gcp_agent'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Thirumoorthi Ramaswami'
+maintainer_email 'moorthy978@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures gcp_agent'
 long_description 'Installs/Configures gcp_agent'
