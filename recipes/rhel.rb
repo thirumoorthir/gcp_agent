@@ -13,7 +13,7 @@
 
 # sudo yum install -y stackdriver-agent
 
-remote_file '/tmp/add-monitoring-agent-repo.sh' do
+remote_file "#{Chef::Config[:file_cache_path]}/add-monitoring-agent-repo.sh" do
   source 'https://dl.google.com/cloudagents/add-monitoring-agent-repo.sh'
   sensitive true
   owner 'root'
@@ -24,7 +24,7 @@ end
 
 bash 'Add repo' do
   code <<-EOH
-    bash add-monitoring-agent-repo.sh
+    bash "#{Chef::Config[:file_cache_path]}/add-monitoring-agent-repo.sh"
     EOH
   action :run
   cwd '/tmp'
@@ -32,5 +32,9 @@ bash 'Add repo' do
 end
 
 yum_package 'stackdriver-agent' do
-    action :install
+  action :install
+end
+
+service 'stackdriver-agent' do
+  action :start
 end
