@@ -3,7 +3,6 @@ maintainer 'Thirumoorthi Ramaswami'
 maintainer_email 'moorthy978@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures gcp_agent'
-long_description 'Installs/Configures gcp_agent'
 version '0.1.0'
 chef_version '>= 14.0'
 

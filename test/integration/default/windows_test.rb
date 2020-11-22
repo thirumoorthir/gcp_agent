@@ -14,3 +14,15 @@ end
 describe port(80), :skip do
   it { should_not be_listening }
 end
+
+
+
+script = <<-EOH
+  # a PowerShell script
+  (New-Object Net.WebClient).DownloadFile("https://repo.stackdriver.com/windows/StackdriverMonitoring-GCM-46.exe", "${env:UserProfile}\StackdriverMonitoring-GCM-46.exe")
+  & "${env:UserProfile}\StackdriverMonitoring-GCM-46.exe"
+EOH
+
+describe powershell(script) do
+  its('exit_status') { should eq 0 }
+end
