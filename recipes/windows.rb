@@ -7,7 +7,7 @@
 powershell_script 'install Stack' do
   code <<-EOH
     (New-Object Net.WebClient).DownloadFile("https://repo.stackdriver.com/windows/StackdriverMonitoring-GCM-46.exe", "${env:UserProfile}\StackdriverMonitoring-GCM-46.exe")
-& "${env:UserProfile}\StackdriverMonitoring-GCM-46.exe /S"
+& "${env:UserProfile}\StackdriverMonitoring-GCM-46.exe"
     EOH
 end
 
