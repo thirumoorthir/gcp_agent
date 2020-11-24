@@ -4,13 +4,14 @@
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
-powershell_script 'install Stack' do
-  code <<-EOH
-    (New-Object Net.WebClient).DownloadFile("https://repo.stackdriver.com/windows/StackdriverMonitoring-GCM-46.exe", "${env:UserProfile}\StackdriverMonitoring-GCM-46.exe")
-& "${env:UserProfile}\StackdriverMonitoring-GCM-46.exe"
-    EOH
+remote_file "#{Chef::Config[:file_cache_path]}\\StackdriverMonitoring-GCM-46.exe" do
+    source 'https://repo.stackdriver.com/windows/StackdriverMonitoring-GCM-46.exe'
+    action :create
 end
 
-service 'StackdriverMonitoring' do
-  action :start
+powershell_script 'name' do
+    code <<-EOH
+    .\StackdriverMonitoring-GCM-46.exe /S /D="C:\Google Cloud's operations suite\Monitoring\"
+    EOH
+    cwd "#{Chef::Config[:file_cache_path]}"
 end
