@@ -31,10 +31,9 @@ bash 'Add repo' do
   creates '/etc/yum.repos.d/google-cloud-monitoring.repo'
 end
 
-execute 'gpg add'  do
-    command 'yes | yum repolist'
+execute 'gpg add' do
+  command 'yes | yum repolist'
 end
-
 
 yum_package 'stackdriver-agent' do
   action :install
