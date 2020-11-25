@@ -11,7 +11,8 @@ end
 
 powershell_script 'name' do
   code <<-EOH
-    .\\StackdriverMonitoring-GCM-46.exe /S /D="C:\\Google Cloud's operations suite\\Monitoring\"
+    .\\StackdriverMonitoring-GCM-46.exe /S"
     EOH
   cwd Chef::Config[:file_cache_path]
+  creates 'C:\\Program Files (x86)\\Stackdriver'
 end
