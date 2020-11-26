@@ -9,9 +9,9 @@ remote_file "#{Chef::Config[:file_cache_path]}\\StackdriverMonitoring-GCM-46.exe
   action :create
 end
 
-powershell_script 'name' do
+powershell_script 'install stack driver' do
   code <<-EOH
-    .\\StackdriverMonitoring-GCM-46.exe /S"
+    .\\StackdriverMonitoring-GCM-46.exe /S
     EOH
   cwd Chef::Config[:file_cache_path]
   creates 'C:\\Program Files (x86)\\Stackdriver'
