@@ -23,6 +23,8 @@ smoke = "chef exec kitchen verify"
 # the line below and running the command: `delivery local functional`
 # functional = ""
 cleanup = "chef exec kitchen destroy"
+functional = "echo ==dummy test please ignore=="
+
 
 # Remote project.toml file
 #
