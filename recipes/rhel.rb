@@ -39,3 +39,9 @@ yum_package 'stackdriver-agent' do
   action :install
   flush_cache [ :before ]
 end
+
+command = 'ls -ltr  >/dev/null 2>&1 ; echo $?'
+command_out = shell_out(command).stdout
+check_out = command_out.chomp
+
+include_recipe "#{cookbook_name}::global" if check_out == '0'
