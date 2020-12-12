@@ -1,7 +1,5 @@
 # gcp_agent
-[![Build Status](https://ci.appveyor.com/project/thirumoorthir/gcp-agent/branch/master)](https://ci.appveyor.com/api/projects/status/thirumoorthir/gcp-agent/branch/master?retina=true)
-
-[![Build Status2]https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true](https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true)
+[![Build status](https://ci.appveyor.com/api/projects/status/9x4uepmm1g4rktie/branch/master?svg=true)](https://ci.appveyor.com/api/projects/status/thirumoorthir/gcp-agent/branch/master) [![Cookbook Version](https://img.shields.io/cookbook/v/windows.svg)](https://supermarket.chef.io/cookbooks/gcp-agent)
 
 
 # DESCRIPTION
